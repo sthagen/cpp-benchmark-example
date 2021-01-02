@@ -19,11 +19,10 @@ include(${CPM_DOWNLOAD_LOCATION})
 # ---- Add dependencies via CPM ----
 # See https://github.com/TheLartians/CPM.cmake for details and examples
 
-# for now play with the fibonacci stuff from Lars
 CPMAddPackage(
-  NAME fibonacci
-  GITLAB_REPOSITORY TheLartians/Fibonacci
-  GIT_TAG 151fdf80b2f7c627cbf3b56c5abfc2a415094707
+  NAME tribonacci
+  GITHUB_REPOSITORY sthagen/cpp-tribonacci
+  GIT_TAG 56b39c93a361527c9ad37f3feab0ee0c9c869990
 )
 
 CPMAddPackage(
@@ -45,7 +44,7 @@ endif()
 
 add_executable(benchmark_example main.cpp)
 set_target_properties(benchmark_example PROPERTIES CXX_STANDARD 17)        
-target_link_libraries(benchmark_example fibonacci benchmark)
+target_link_libraries(benchmark_example tribonacci benchmark)
 
 # ---- Enable testing ----
 
