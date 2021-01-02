@@ -23,7 +23,7 @@ include(${CPM_DOWNLOAD_LOCATION})
 CPMAddPackage(
   NAME fibonacci
   GITLAB_REPOSITORY TheLartians/Fibonacci
-  VERSION 2.0
+  GIT_TAG 151fdf80b2f7c627cbf3b56c5abfc2a415094707
 )
 
 CPMAddPackage(
