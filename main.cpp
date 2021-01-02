@@ -4,7 +4,7 @@
 
 #include <benchmark/benchmark.h>
 
-#include <fibonacci.h>
+#include <tribonacci.hpp>
 
 
 std::vector<unsigned> createTestNumbers() {
@@ -16,20 +16,20 @@ std::vector<unsigned> createTestNumbers() {
     return v;
 }
 
-void fibonacci(benchmark::State& state) {
+void tribonacci(benchmark::State& state) {
     auto numbers = createTestNumbers();
     for (auto _ : state) {
-      for (auto v: numbers) benchmark::DoNotOptimize(fibonacci(v));
+      for (auto v: numbers) benchmark::DoNotOptimize(tribonacci(v));
     }
 }
-BENCHMARK(fibonacci);
+BENCHMARK(tribonacci);
 
-void fastFibonacci(benchmark::State& state) {
+void tribonacci_iter(benchmark::State& state) {
     auto numbers = createTestNumbers();
     for (auto _ : state) {
-      for (auto v: numbers) benchmark::DoNotOptimize(fastFibonacci(v));
+      for (auto v: numbers) benchmark::DoNotOptimize(tribonacci_iter(v));
     }
 }
-BENCHMARK(fastFibonacci);
+BENCHMARK(tribonacci_iter);
 
 BENCHMARK_MAIN();
