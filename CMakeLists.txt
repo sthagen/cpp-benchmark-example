@@ -29,7 +29,9 @@ CPMAddPackage(
 CPMAddPackage(
   NAME benchmark
   GITHUB_REPOSITORY google/benchmark
-  VERSION 1.5.0
+  GIT_TAG a6d08aea4b70c5532736924377df8be62ef2067a
+  # Below version not yet released - take above approved commit
+  VERSION 1.5.3
   OPTIONS
     "BENCHMARK_ENABLE_TESTING Off"
 )
