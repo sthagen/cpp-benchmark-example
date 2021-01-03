@@ -32,4 +32,12 @@ void tribonacci_iter(benchmark::State& state) {
 }
 BENCHMARK(tribonacci_iter);
 
+void tribonacci_dynamic(benchmark::State& state) {
+    auto numbers = createTestNumbers();
+    for (auto _ : state) {
+        for (auto v: numbers) benchmark::DoNotOptimize(tribonacci_dynamic(v));
+    }
+}
+BENCHMARK(tribonacci_dynamic);
+
 BENCHMARK_MAIN();
